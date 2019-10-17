@@ -1,4 +1,34 @@
-let myLibrary = [];
+let myLibrary = [
+];
+
+
+const addBook = document.querySelector('.add-book');
+
+const table = document.querySelector('.table')
+
+const render = (evt) => {
+  myLibrary.forEach(book => {
+    let bookElement = creatNode('div');
+    let bookTitle = creatNode('h2');
+    let bookAuthor = creatNode('p');
+    let bookPages = creatNode('p');
+    bookTitle.textContent = `Title: ${book.title}`;
+    bookAuthor.textContent = `Author: ${book.author}`;
+    bookPages.textContent = `No of Pages: ${book.pages}`;
+    append(bookElement, bookTitle);
+    append(bookElement, bookAuthor);
+    append(bookElement, bookPages);
+    append(table, bookElement);
+  })
+}
+
+const creatNode = (el) => {
+  return document.createElement(el);
+};
+
+const append = (parent, child) => {
+  return parent.appendChild(child);
+};
 
 function Book(title, author, pages, read) {
     this.title = title
@@ -15,7 +45,7 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary(myLibrary, book) {
-    return myLibrary.concat(book)
+    return myLibrary.concat(book);
 }
 
 (
