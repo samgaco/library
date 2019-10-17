@@ -1,10 +1,27 @@
 let myLibrary = [
 ];
 
+const toggleStatus = (event, index, myLibrary) => {
+  let bookStatus = event.target;
+  if (bookStatus.textContent === `Read`){
+    bookStatus.textContent = `Not Read`;
+    myLibrary[index].status = false;
+  }else{
+    bookStatus.textContent = `Read`;
+    myLibrary[index].status = true;
+  }
+};
+
+const removeBook = (evt, index, myLibrary) => {
+  console.log("invoked!");
+  myLibrary.splice(index, 1);
+  render();
+}
+
 function openForm() {
     document.getElementById("myForm").style.display = "block";
   }
-  
+
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
   }
@@ -21,19 +38,29 @@ const render = (evt) => {
     let bookAuthor = creatNode('p');
     let bookPages = creatNode('p');
     let bookRemove = creatNode('button');
+    let bookStatus = creatNode('button');
 
     bookTitle.textContent = `Title: ${book.title}`;
     bookAuthor.textContent = `Author: ${book.author}`;
     bookPages.textContent = `No of Pages: ${book.pages}`;
-    bookRemove.textContent = `Remove book`
-    bookElement.data.setAttribute(`data`, `position`: `${index}` ) 
+    bookRemove.textContent = `Remove book`;
+    bookStatus.textContent = 'Not Read';
+    bookElement.setAttribute('data', `position: '${index}'` )
 
     append(bookElement, bookTitle);
     append(bookElement, bookAuthor);
     append(bookElement, bookPages);
+    append(bookElement, bookStatus);
     append(bookElement, bookRemove );
 
     append(table, bookElement);
+
+    bookStatus.addEventListener('click', (evt) => {
+      toggleStatus(evt, bookElement.dataset.position, myLibrary);
+    });
+    bookRemove.addEventListener('click', (evt) => {
+      removeBook(evt, bookElement.dataset.position, myLibrary);
+    })
   })
 }
 
@@ -46,16 +73,17 @@ const append = (parent, child) => {
 };
 
 function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
 
-    this.read = function (read) {
-        return read ? "read already" : "not read yet"
+    this.readStatus = function () {
+        return this.read ? "read already" : "not read yet"
     }
 
     this.sayName = function () {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read()}`
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.readStatus()}`
     }
 }
 
