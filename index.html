@@ -14,13 +14,37 @@
 
 <body onload="render()">
     <main>
-      <button class="add-book" type="button" name="button"></button>
+
+<div class="form-popup" id="myForm">
+
+    <form class="" action="index.html" method="post">
+            <label for="Title">Title</label><br>
+            <input type="text" name="Title"><br>
+            <label for="Author">Author</label><br>
+            <input type="text" name="Author"><br>
+            <label for="Pages">Number of pages</label><br>
+            <input type="text" name="Pages"><br><br>
+            <label for="read">Read already?</label><br>
+            <input type="radio" name="read" value="not read" checked> not
+            <input type="radio" name="read" value="read already"> already<br>
+            <input type="submit" value="Submit">
+    </form>
+
+    <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+
+
+</div>
+
+<button class="add-book" type="button" name="button" onclick="openForm()"> Add Book</button>
+
+
+
+
       <section class="table">
         
       </section>
-      <form class="" action="index.html" method="post">
 
-      </form>
+
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="javascripts/book.js"></script>

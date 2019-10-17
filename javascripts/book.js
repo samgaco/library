@@ -1,23 +1,38 @@
 let myLibrary = [
 ];
 
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
 
 const addBook = document.querySelector('.add-book');
 
 const table = document.querySelector('.table')
 
 const render = (evt) => {
-  myLibrary.forEach(book => {
+  myLibrary.forEach( (book, index, myLibrary) => {
+
     let bookElement = creatNode('div');
     let bookTitle = creatNode('h2');
     let bookAuthor = creatNode('p');
     let bookPages = creatNode('p');
+    let bookRemove = creatNode('button');
+
     bookTitle.textContent = `Title: ${book.title}`;
     bookAuthor.textContent = `Author: ${book.author}`;
     bookPages.textContent = `No of Pages: ${book.pages}`;
+    bookRemove.textContent = `Remove book`
+    bookElement.data.setAttribute(`data`, `position`: `${index}` ) 
+
     append(bookElement, bookTitle);
     append(bookElement, bookAuthor);
     append(bookElement, bookPages);
+    append(bookElement, bookRemove );
+
     append(table, bookElement);
   })
 }
@@ -46,6 +61,7 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(myLibrary, book) {
     return myLibrary.concat(book);
+
 }
 
 (
