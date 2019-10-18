@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html>
-
+​
 <head>
     <meta charset="utf-8">
     <title></title>
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+​
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Abel|Lobster&display=swap" rel="stylesheet">
-
-
+​
+​
 </head>
-
+​
 <body onload="render()">
-
+​
     <nav class="navbar navbar-dark bg-dark">
-
-
+​
+​
         <h3 class="logo"><i class="fas fa-book-reader"></i> Library </h3>
-        <button class="add-book" type="button" name="button" onclick="openForm()"> Add Book</button>
-
+        <button class="add-book" type="button" name="button"> Add Book</button>
+​
     </nav>
-
+​
     <main class="container">
-
+​
         <div class="form-popup pad-form" id="myForm">
-
-
+​
+​
             <form class="form" action="index.html" method="post">
-
-
+​
+​
                 <label for="Title">Title</label><br>
                 <input type="text" name="Title" class="title"><br>
-
+​
                 <label for="Author">Author</label><br>
                 <input type="text" name="Author" class="author"><br>
-
+​
                 <label for="Pages">Number of pages</label><br>
                 <input type="text" name="Pages" class="pages"><br><br>
-
-
-
+​
+​
+​
                 <div class="d-flex flex-row">
                     <div class="d-flex justify-content-center radio-btn">
                         <label for="read">Read</label><br>
@@ -54,37 +54,37 @@
                         <input type="radio" name="not-read" value="read already"><br>
                     </div>
                 </div>
-
-                <input type="submit" onclick="submitForm(event)" value="Submit">
-                <button type="submit" class="closebn btn-danger" onclick="closeForm()">Close</button>
-
+​
+                <input type="submit" value="Submit" class='submit'>
+                <button type="submit" class="closebn btn-danger close-form">Close</button>
+​
             </form>
-
-
-
+​
+​
+​
         </div>
-
-
-
-
-
+​
+​
+​
+​
+​
         <section class="table row">
-
+​
         </section>
-
-
+​
+​
     </main>
-
+​
     <footer class="text-center">
-
+​
         Created by Simon & Samuel | Microverse Project | 2019
-
-
+​
+​
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="javascripts/book.js"></script>
 </body>
-
-
-
+​
+​
+​
 </html>
