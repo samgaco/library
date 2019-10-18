@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="#">
-    <img src="images/logolibrary.png" alt="Logo" width="100" height="100">
+    <img src="images/logolibrary.png" alt="Logo">
   </a>
 
   <h3 align="center">Library</h3>
@@ -34,7 +34,7 @@
 ## About The Project
 
   <a href="#">
-    <img src="images/librarymain.png" alt="Logo" width="100" height="100">
+    <img src="images/librarymain.png" alt="Logo">
   </a>
 
 
