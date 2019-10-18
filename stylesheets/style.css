@@ -20,7 +20,7 @@ main{
 
 .logo{
     color: white;
-    font-weight: bolder;
+    font-family: 'Lobster', cursive;
 }
 
 
@@ -42,7 +42,7 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
   }
-  
+
   input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
@@ -64,22 +64,38 @@ input[type=text], select {
     border-radius: 4px;
     cursor: pointer;
   }
-  
+
   input[type=submit]:hover {
     background-color: #45a049;
   }
-  
+
 
 /* Book cards */
 
-.table{
+.container .table{
     margin-top: 5rem;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+
 }
 
-.book{
-   margin: 1rem;
+.radio-btn{
+  width: 100%;
 }
 
+input[type='radio'], label[for='read'], label[for='not-read']{
+  margin-right: 1em;
+}
+
+.container .book{
+   margin: 2.3%;
+   border-top-right-radius: 2em;
+   border-top-left-radius: 2em;
+   padding: 1em;
+   min-width: 28.5%;
+   font-family: 'Abel', sans-serif;
+}
 
 
 /* Footer */

@@ -11,7 +11,9 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Lobster&display=swap" rel="stylesheet">
+
 
 </head>
 
@@ -45,13 +47,11 @@
 
 
                 <div class="d-flex flex-row">
-                    <div class="d-flex justify-content-center">
-                        <label for="read">Read already?</label><br>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <input type="radio" name="read" value="not read" class="not-read" checked> not
-                        <input type="radio" name="read" value="read already"> already<br>
-
+                    <div class="d-flex justify-content-center radio-btn">
+                        <label for="read">Read</label><br>
+                        <input type="radio" name="read" value="not read" class="not-read" checked>
+                        <label for="not-read">Not read</label><br>
+                        <input type="radio" name="not-read" value="read already"><br>
                     </div>
                 </div>
 

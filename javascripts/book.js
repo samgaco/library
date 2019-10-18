@@ -61,7 +61,7 @@ const render = (evt) => {
     bookRemove.textContent = `Remove book`;
     bookStatus.textContent =  book.read ? "Read":"Not read"
     bookElement.dataset.position = `${index}`;
-    bookElement.classList.add('book','card','col-3','bg-secondary');
+    bookElement.classList.add('book','card','col-3','bg-secondary', 'text-white');
 
 
     append(bookElement, bookTitle);
@@ -120,7 +120,7 @@ function addBookToLibrary(myLibrary, book) {
 
 (
     function main() {
-      
+
         let book0 = new Book("Lord of the rings", "tolkien", 500, false);
         let book1 = new Book("conferency of dunces", "john kennedy toole", 600, false);
         let book2 = new Book("farwell to arms", "ernest hemminway", 350, false);
