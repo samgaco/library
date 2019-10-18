@@ -36,7 +36,7 @@
     <img src="images/librarymain.png" alt="Logo">
   </a>
   
-Project based the [ project](https://www.theodinproject.com/courses/javascript/lessons/library) in the odin project as a part of the Microverse curriculum. The purpose was to have a first contact with javascript.
+Based on the [ library project](https://www.theodinproject.com/courses/javascript/lessons/library) in the odin project as a part of the Microverse curriculum. The purpose was to have a first contact with javascript.
 
 The project is able to get input data of books (with datafields; title, author, number of pages and status), remove the inputs and change the status of the books from "read" to "not read".
 
