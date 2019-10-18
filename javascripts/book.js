@@ -59,15 +59,20 @@ const render = (evt) => {
     bookAuthor.textContent = `Author: ${book.author}`;
     bookPages.textContent = `No of Pages: ${book.pages}`;
     bookRemove.textContent = `Remove book`;
-    bookStatus.textContent = 'Not Read';
+    bookStatus.textContent =  book.read ? "Read":"Not read"
     bookElement.dataset.position = `${index}`;
-    bookElement.classList.add('book');
+    bookElement.classList.add('book','card','col-3','bg-secondary');
+
 
     append(bookElement, bookTitle);
     append(bookElement, bookAuthor);
     append(bookElement, bookPages);
     append(bookElement, bookStatus);
     append(bookElement, bookRemove );
+
+    bookStatus.classList.add('btn', 'btn-light');
+    bookRemove.classList.add('btn', 'btn-danger');
+
 
     append(table, bookElement);
 
@@ -77,6 +82,8 @@ const render = (evt) => {
     bookRemove.addEventListener('click', (evt) => {
       removeBook(evt, bookElement.dataset.position, myLibrary);
     })
+
+
   })
 }
 
@@ -113,9 +120,14 @@ function addBookToLibrary(myLibrary, book) {
 
 (
     function main() {
-        let book0 = new Book("gfda", "James", 110, false);
-        let book1 = new Book("hobbit", "tolkien", 200, false);
-        let book2 = new Book("grown cubicles", "john green", 840, false);
+      
+        let book0 = new Book("Lord of the rings", "tolkien", 500, false);
+        let book1 = new Book("conferency of dunces", "john kennedy toole", 600, false);
+        let book2 = new Book("farwell to arms", "ernest hemminway", 350, false);
+
+        myLibrary = addBookToLibrary(myLibrary, book0);
+        myLibrary = addBookToLibrary(myLibrary, book1);
+        myLibrary = addBookToLibrary(myLibrary, book2);
 
 
 

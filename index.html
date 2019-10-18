@@ -8,46 +8,83 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
 </head>
 
 <body onload="render()">
-    <main>
 
-<div class="form-popup" id="myForm">
-
-    <form class="" action="index.html" method="post">
-            <label for="Title">Title</label><br>
-            <input type="text" name="Title" class="title"><br>
-            <label for="Author">Author</label><br>
-            <input type="text" name="Author" class="author"><br>
-            <label for="Pages">Number of pages</label><br>
-            <input type="text" name="Pages" class="pages"><br><br>
-            <label for="read">Read already?</label><br>
-            <input type="radio" name="read" value="not read" class="not-read" checked> not
-            <input type="radio" name="read" value="read already"> already<br>
-            <input type="submit" onclick="submitForm(event)" value="Submit">
-    </form>
-
-    <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+    <nav class="navbar navbar-dark bg-dark">
 
 
-</div>
+        <h3 class="logo"><i class="fas fa-book-reader"></i> Library </h3>
+        <button class="add-book" type="button" name="button" onclick="openForm()"> Add Book</button>
 
-<button class="add-book" type="button" name="button" onclick="openForm()"> Add Book</button>
+    </nav>
+
+    <main class="container">
+
+        <div class="form-popup pad-form" id="myForm">
+
+
+            <form class="form" action="index.html" method="post">
+
+
+                <label for="Title">Title</label><br>
+                <input type="text" name="Title" class="title"><br>
+
+                <label for="Author">Author</label><br>
+                <input type="text" name="Author" class="author"><br>
+
+                <label for="Pages">Number of pages</label><br>
+                <input type="text" name="Pages" class="pages"><br><br>
+
+
+
+                <div class="d-flex flex-row">
+                    <div class="d-flex justify-content-center">
+                        <label for="read">Read already?</label><br>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <input type="radio" name="read" value="not read" class="not-read" checked> not
+                        <input type="radio" name="read" value="read already"> already<br>
+
+                    </div>
+                </div>
+
+                <input type="submit" onclick="submitForm(event)" value="Submit">
+                <button type="submit" class="closebn btn-danger" onclick="closeForm()">Close</button>
+
+            </form>
+
+
+
+        </div>
 
 
 
 
-      <section class="table">
 
-      </section>
+        <section class="table row">
+
+        </section>
 
 
     </main>
+
+    <footer class="text-center">
+
+        Created by Simon & Samuel | Microverse Project | 2019
+
+
+    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="javascripts/book.js"></script>
 </body>
+
+
 
 </html>
