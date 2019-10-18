@@ -1,23 +1,23 @@
 let myLibrary = [];
 
-const addBook = document.querySelector(".add-book");
+const addBook = document.querySelector('.add-book');
 
-const table = document.querySelector(".table");
+const table = document.querySelector('.table');
 
 const toggleStatus = (event, index, myLibrary) => {
   const bookStatus = event.target;
-  if (bookStatus.textContent === "Read") {
-    bookStatus.textContent = "Not Read";
+  if (bookStatus.textContent === 'Read') {
+    bookStatus.textContent = 'Not Read';
     myLibrary[index].status = false;
   } else {
-    bookStatus.textContent = "Read";
+    bookStatus.textContent = 'Read';
     myLibrary[index].status = true;
   }
 };
 
 const removeBook = (evt, index, myLibrary) => {
   myLibrary.splice(index, 1);
-  document.querySelectorAll(".book").forEach(node => {
+  document.querySelectorAll('.book').forEach(node => {
     table.removeChild(node);
   });
   render();
@@ -25,45 +25,45 @@ const removeBook = (evt, index, myLibrary) => {
 
 const submitForm = evt => {
   evt.preventDefault();
-  console.log("invoked");
-  let title = document.querySelector(".title").value;
-  let author = document.querySelector(".author").value;
-  let pages = document.querySelector(".pages").value;
-  let status = document.querySelector(".not-read").checked ? false : true;
+  console.log('invoked');
+  let title = document.querySelector('.title').value;
+  let author = document.querySelector('.author').value;
+  let pages = document.querySelector('.pages').value;
+  let status = document.querySelector('.not-read').checked ? false : true;
   let book = new Book(title, author, pages, status);
   myLibrary = addBookToLibrary(myLibrary, book);
   render();
 };
 
 function openForm() {
-  document.getElementById("myForm").style.display = "block";
+  document.getElementById('myForm').style.display = 'block';
 }
 
 function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+  document.getElementById('myForm').style.display = 'none';
 }
 
-const render = evt => {
+const render = () => {
   myLibrary.forEach((book, index, myLibrary) => {
-    let bookElement = creatNode("div");
-    let bookTitle = creatNode("h2");
-    let bookAuthor = creatNode("p");
-    let bookPages = creatNode("p");
-    let bookRemove = creatNode("button");
-    let bookStatus = creatNode("button");
+    let bookElement = creatNode('div');
+    let bookTitle = creatNode('h2');
+    let bookAuthor = creatNode('p');
+    let bookPages = creatNode('p');
+    let bookRemove = creatNode('button');
+    let bookStatus = creatNode('button');
 
     bookTitle.textContent = `Title: ${book.title}`;
     bookAuthor.textContent = `Author: ${book.author}`;
     bookPages.textContent = `No of Pages: ${book.pages}`;
     bookRemove.textContent = `Remove book`;
-    bookStatus.textContent = book.read ? "Read" : "Not read";
+    bookStatus.textContent = book.read ? 'Read' : 'Not read';
     bookElement.dataset.position = `${index}`;
     bookElement.classList.add(
-      "book",
-      "card",
-      "col-3",
-      "bg-secondary",
-      "text-white"
+      'book',
+      'card',
+      'col-3',
+      'bg-secondary',
+      'text-white'
     );
 
     append(bookElement, bookTitle);
@@ -72,15 +72,15 @@ const render = evt => {
     append(bookElement, bookStatus);
     append(bookElement, bookRemove);
 
-    bookStatus.classList.add("btn", "btn-light");
-    bookRemove.classList.add("btn", "btn-danger");
+    bookStatus.classList.add('btn', 'btn-light');
+    bookRemove.classList.add('btn', 'btn-danger');
 
     append(table, bookElement);
 
-    bookStatus.addEventListener("click", evt => {
+    bookStatus.addEventListener('click', evt => {
       toggleStatus(evt, bookElement.dataset.position, myLibrary);
     });
-    bookRemove.addEventListener("click", evt => {
+    bookRemove.addEventListener('click', evt => {
       removeBook(evt, bookElement.dataset.position, myLibrary);
     });
   });
@@ -101,7 +101,7 @@ function Book(title, author, pages, read) {
   this.read = read;
 
   this.readStatus = function() {
-    return this.read ? "read already" : "not read yet";
+    return this.read ? 'read already' : 'not read yet';
   };
 
   this.sayName = function() {
@@ -112,21 +112,21 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary(myLibrary, book) {
-  document.querySelectorAll(".book").forEach(node => {
+  document.querySelectorAll('.book').forEach(node => {
     table.removeChild(node);
   });
   return myLibrary.concat(book);
 }
 
 (function main() {
-  let book0 = new Book("Lord of the rings", "tolkien", 500, false);
+  let book0 = new Book('Lord of the rings', 'tolkien', 500, false);
   let book1 = new Book(
-    "conferency of dunces",
-    "john kennedy toole",
+    'conferency of dunces',
+    'john kennedy toole',
     600,
     false
   );
-  let book2 = new Book("farwell to arms", "ernest hemminway", 350, false);
+  let book2 = new Book('farwell to arms', 'ernest hemminway', 350, false);
 
   myLibrary = addBookToLibrary(myLibrary, book0);
   myLibrary = addBookToLibrary(myLibrary, book1);
