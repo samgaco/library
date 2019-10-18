@@ -42,7 +42,7 @@ The project is able to get input data of books (with datafields; title, author, 
 
 
 ### Built With
-* [JavaScript](https://rubyonrails.org/)
+* [JavaScript](https://www.javascript.com/)
 
 
 ### Contact
