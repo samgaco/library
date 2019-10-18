@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="#">
-    <img src="images/logolibrary.png" alt="Logo" width="80" height="80">
+    <img src="images/logolibrary.png" alt="Logo" width="100" height="100">
   </a>
 
   <h3 align="center">Library</h3>
@@ -33,8 +33,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-    <img src="images/librarymain.png" alt="Logo" width="80" height="80">
-
+  <a href="#">
+    <img src="images/librarymain.png" alt="Logo" width="100" height="100">
+  </a>
 
 
 
@@ -43,6 +44,9 @@
 * [JavaScript](https://rubyonrails.org/)
 
 
-### Built With
+### Contact
+
+* [Simon Wathigo](https://github.com/wathigo)
+* [Samuel García Companys](https://github.com/samgaco)
 
 
