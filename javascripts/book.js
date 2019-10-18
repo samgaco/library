@@ -13,10 +13,26 @@ const toggleStatus = (event, index, myLibrary) => {
 };
 
 const removeBook = (evt, index, myLibrary) => {
-  console.log("invoked!");
   myLibrary.splice(index, 1);
+  document.querySelectorAll('.book').forEach(node => {
+    table.removeChild(node);
+  });
   render();
 }
+
+
+
+const submitForm = ((evt) => {
+  evt.preventDefault();
+  console.log("invoked")
+  let title = document.querySelector('.title').value;
+  let author = document.querySelector('.author').value;
+  let pages = document.querySelector('.pages').value;
+  let status = document.querySelector('.not-read').checked ? false : true;
+  let book = new Book(title, author, pages, status);
+  myLibrary = addBookToLibrary(myLibrary, book);
+  render();
+})
 
 function openForm() {
     document.getElementById("myForm").style.display = "block";
@@ -32,7 +48,6 @@ const table = document.querySelector('.table')
 
 const render = (evt) => {
   myLibrary.forEach( (book, index, myLibrary) => {
-
     let bookElement = creatNode('div');
     let bookTitle = creatNode('h2');
     let bookAuthor = creatNode('p');
@@ -45,7 +60,8 @@ const render = (evt) => {
     bookPages.textContent = `No of Pages: ${book.pages}`;
     bookRemove.textContent = `Remove book`;
     bookStatus.textContent = 'Not Read';
-    bookElement.setAttribute('data', `position: '${index}'` )
+    bookElement.dataset.position = `${index}`;
+    bookElement.classList.add('book');
 
     append(bookElement, bookTitle);
     append(bookElement, bookAuthor);
@@ -88,6 +104,9 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary(myLibrary, book) {
+    document.querySelectorAll('.book').forEach(node => {
+      table.removeChild(node);
+    });
     return myLibrary.concat(book);
 
 }
@@ -98,9 +117,7 @@ function addBookToLibrary(myLibrary, book) {
         let book1 = new Book("hobbit", "tolkien", 200, false);
         let book2 = new Book("grown cubicles", "john green", 840, false);
 
-        myLibrary = addBookToLibrary(myLibrary, book0);
-        myLibrary = addBookToLibrary(myLibrary, book1);
-        myLibrary = addBookToLibrary(myLibrary, book2);
+
 
         console.log(myLibrary)
     }
