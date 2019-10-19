@@ -73,7 +73,7 @@ const startApp = (renderArg) => {
 };
 let appStarted = false;
 
-const render = () => {
+const render = (libraryArg) => {
   myLibrary.forEach((book, index, libraryArg) => {
     const bookElement = creatNode('div');
     const bookTitle = creatNode('h2');
@@ -122,9 +122,9 @@ const render = () => {
 };
 (function main() {
   render();
-  const book0 = new Book('Lord of the rings', 'tolkien', 500, false);
-  const book1 = new Book('conferency of dunces', 'john kennedy toole', 600, false);
-  const book2 = new Book('farwell to arms', 'ernest hemminway', 350, false);
+  const book0 = new Book('The Lord of the Rings', 'J. R. R. Tolkien', 500, false);
+  const book1 = new Book('A Confederacy of Dunces', 'John Kennedy Toole', 600, false);
+  const book2 = new Book('A Farewell to Arms', 'Ernest Hemingway', 350, false);
   myLibrary = addBookToLibrary(myLibrary, book0);
   myLibrary = addBookToLibrary(myLibrary, book1);
   myLibrary = addBookToLibrary(myLibrary, book2);
