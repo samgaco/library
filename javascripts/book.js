@@ -1,3 +1,5 @@
+/*eslint-env browser*/
+
 let myLibrary = [];
 
 const table = document.querySelector('.table');
@@ -66,10 +68,11 @@ const startApp = () => {
   });
   document.querySelector('.close-form').addEventListener('click', (evt) => {
     closeForm();
-  })
+  });
 };
 let appStarted = false;
-const render = () => {
+
+  const render = () => {
 
   myLibrary.forEach((book, index, libraryArg) => {
     const bookElement = creatNode('div');
@@ -90,7 +93,7 @@ const render = () => {
       'card',
       'col-3',
       'bg-secondary',
-      'text-white'
+      'text-white',
     );
 
     append(bookElement, bookTitle);
@@ -116,19 +119,11 @@ const render = () => {
     startApp();
     appStarted = true;
   }
-
 };
-
 (function main() {
   const book0 = new Book('Lord of the rings', 'tolkien', 500, false);
-  const book1 = new Book(
-    'conferency of dunces',
-    'john kennedy toole',
-    600,
-    false
-  );
+  const book1 = new Book('conferency of dunces','john kennedy toole',600, false);
   const book2 = new Book('farwell to arms', 'ernest hemminway', 350, false);
-
   myLibrary = addBookToLibrary(myLibrary, book0);
   myLibrary = addBookToLibrary(myLibrary, book1);
   myLibrary = addBookToLibrary(myLibrary, book2);
