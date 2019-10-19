@@ -93,8 +93,8 @@ const render = () => {
       'card',
       'col-3',
       'bg-secondary',
-      'text-white'
-      );
+      'text-white',
+    );
 
     append(bookElement, bookTitle);
     append(bookElement, bookAuthor);
