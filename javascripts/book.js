@@ -1,4 +1,6 @@
 /*eslint-env browser*/
+/*eslint comma-dangle: ["error", "never"]*/
+
 
 let myLibrary = [];
 
@@ -93,8 +95,8 @@ let appStarted = false;
       'card',
       'col-3',
       'bg-secondary',
-      'text-white',
-    );
+      'text-white'
+       );
 
     append(bookElement, bookTitle);
     append(bookElement, bookAuthor);
