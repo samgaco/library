@@ -1,4 +1,5 @@
 /* eslint-env browser */
+/* eslint no-unused-vars: [1, {"args": "env": "[iI]gnored"}]*/
 
 let myLibrary = [];
 
@@ -73,7 +74,6 @@ const startApp = () => {
 let appStarted = false;
 
 const render = () => {
-
   myLibrary.forEach((book, index, libraryArg) => {
     const bookElement = creatNode('div');
     const bookTitle = creatNode('h2');
