@@ -42,7 +42,7 @@ function addBookToLibrary(libraryArg, book) {
   return libraryArg.concat(book);
 }
 
-const submitForm = (evt) => {
+const submitForm = (evt, renderArg) => {
   evt.preventDefault();
   const title = document.querySelector('.title').value;
   const author = document.querySelector('.author').value;
@@ -50,8 +50,8 @@ const submitForm = (evt) => {
   const status = !document.querySelector('.not-read').checked;
   const book = new Book(title, author, pages, status);
   myLibrary = addBookToLibrary(myLibrary, book);
-  render();
-};
+  renderArg();
+  };
 
 function openForm() {
   document.getElementById('myForm').style.display = 'block';
@@ -61,9 +61,9 @@ function closeForm() {
   document.getElementById('myForm').style.display = 'none';
 }
 
-const startApp = () => {
+const startApp = (renderArg) => {
   document.querySelector('.submit').addEventListener('click', (evt) => {
-    submitForm(evt);
+    submitForm(evt,renderArg);
   });
   document.querySelector('.add-book').addEventListener('click', (evt) => {
     openForm();
@@ -117,7 +117,7 @@ const render = () => {
     });
   });
   if (!appStarted) {
-    startApp();
+    startApp(render);
     appStarted = true;
   }
 };
