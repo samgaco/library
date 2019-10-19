@@ -74,7 +74,7 @@ const startApp = (renderArg) => {
 
 let appStarted = false;
 
-const render = (libraryArg) => {
+const render = () => {
   myLibrary.forEach((book, index, libraryArg) => {
     const bookElement = creatNode('div');
     const bookTitle = creatNode('h2');
