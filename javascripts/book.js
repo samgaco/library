@@ -1,5 +1,5 @@
 /* eslint-env browser */
-/* eslint no-unused-vars: [2, {"argsIgnorePattern": "evt","render"}] */
+/* eslint no-unused-vars: [1, {"argsIgnorePattern": "evt"}] */
 
 let myLibrary = [];
 
