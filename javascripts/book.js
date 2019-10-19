@@ -2,7 +2,7 @@ let myLibrary = [];
 
 const table = document.querySelector('.table');
 
-const creatNode = (el) => document.createElement(el);
+const creatNode = el => document.createElement(el);
 
 const append = (parent, child) => parent.appendChild(child);
 
@@ -36,6 +36,25 @@ function addBookToLibrary(libraryArg, book) {
     table.removeChild(node);
   });
   return libraryArg.concat(book);
+}
+
+const submitForm = (evt) => {
+  evt.preventDefault();
+  const title = document.querySelector('.title').value;
+  const author = document.querySelector('.author').value;
+  const pages = document.querySelector('.pages').value;
+  const status = !document.querySelector('.not-read').checked;
+  const book = new Book(title, author, pages, status);
+  myLibrary = addBookToLibrary(myLibrary, book);
+  render();
+};
+
+function openForm() {
+  document.getElementById('myForm').style.display = 'block';
+}
+
+function closeForm() {
+  document.getElementById('myForm').style.display = 'none';
 }
 
 const startApp = () => {
@@ -99,24 +118,6 @@ const render = () => {
   }
 
 };
-const submitForm = (evt) => {
-  evt.preventDefault();
-  const title = document.querySelector('.title').value;
-  const author = document.querySelector('.author').value;
-  const pages = document.querySelector('.pages').value;
-  const status = !document.querySelector('.not-read').checked;
-  const book = new Book(title, author, pages, status);
-  myLibrary = addBookToLibrary(myLibrary, book);
-  render();
-};
-
-function openForm() {
-  document.getElementById('myForm').style.display = 'block';
-}
-
-function closeForm() {
-  document.getElementById('myForm').style.display = 'none';
-}
 
 (function main() {
   const book0 = new Book('Lord of the rings', 'tolkien', 500, false);
