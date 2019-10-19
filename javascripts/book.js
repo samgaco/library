@@ -71,6 +71,7 @@ const startApp = (renderArg) => {
     closeForm();
   });
 };
+
 let appStarted = false;
 
 const render = (libraryArg) => {
