@@ -124,7 +124,7 @@ function closeForm() {
     'conferency of dunces',
     'john kennedy toole',
     600,
-    false,
+    false
   );
   const book2 = new Book('farwell to arms', 'ernest hemminway', 350, false);
 
