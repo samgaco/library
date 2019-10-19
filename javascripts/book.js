@@ -1,4 +1,4 @@
-/*eslint-env browser*/
+/* eslint-env browser */
 
 let myLibrary = [];
 
@@ -72,7 +72,7 @@ const startApp = () => {
 };
 let appStarted = false;
 
-  const render = () => {
+const render = () => {
 
   myLibrary.forEach((book, index, libraryArg) => {
     const bookElement = creatNode('div');
@@ -93,7 +93,8 @@ let appStarted = false;
       'card',
       'col-3',
       'bg-secondary',
-      'text-white', );
+      'text-white'
+      );
 
     append(bookElement, bookTitle);
     append(bookElement, bookAuthor);
@@ -121,7 +122,7 @@ let appStarted = false;
 };
 (function main() {
   const book0 = new Book('Lord of the rings', 'tolkien', 500, false);
-  const book1 = new Book('conferency of dunces','john kennedy toole',600, false);
+  const book1 = new Book('conferency of dunces', 'john kennedy toole', 600, false);
   const book2 = new Book('farwell to arms', 'ernest hemminway', 350, false);
   myLibrary = addBookToLibrary(myLibrary, book0);
   myLibrary = addBookToLibrary(myLibrary, book1);
