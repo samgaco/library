@@ -121,6 +121,7 @@ const render = () => {
   }
 };
 (function main() {
+  render();
   const book0 = new Book('Lord of the rings', 'tolkien', 500, false);
   const book1 = new Book('conferency of dunces', 'john kennedy toole', 600, false);
   const book2 = new Book('farwell to arms', 'ernest hemminway', 350, false);
