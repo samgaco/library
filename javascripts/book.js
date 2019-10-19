@@ -1,5 +1,5 @@
 /* eslint-env browser */
-/* eslint no-unused-vars: [1, {"argsIgnorePattern": "evt"}] */
+/* eslint no-unused-vars: [1, {"argsIgnorePattern": "evt|render"}] */
 
 
 let myLibrary = [];
@@ -51,7 +51,7 @@ const submitForm = (evt, renderArg) => {
   const book = new Book(title, author, pages, status);
   myLibrary = addBookToLibrary(myLibrary, book);
   renderArg();
-  };
+};
 
 function openForm() {
   document.getElementById('myForm').style.display = 'block';
@@ -63,7 +63,7 @@ function closeForm() {
 
 const startApp = (renderArg) => {
   document.querySelector('.submit').addEventListener('click', (evt) => {
-    submitForm(evt,renderArg);
+    submitForm(evt, renderArg);
   });
   document.querySelector('.add-book').addEventListener('click', (evt) => {
     openForm();
