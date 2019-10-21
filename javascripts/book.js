@@ -60,10 +60,9 @@ function closeForm() {
   document.getElementById('myForm').style.display = 'none';
 }
 
-function clearForms()
-{
-    $(':input').not(':button, :submit, :reset, :hidden, :checkbox, :radio').val('');
-    $(':checkbox, :radio').prop('checked', false);
+function clearForms() {
+  $(':input').not(':button, :submit, :reset, :hidden, :checkbox, :radio').val('');
+  $(':checkbox, :radio').prop('checked', false);
 }
 
 const startApp = (renderArg) => {
