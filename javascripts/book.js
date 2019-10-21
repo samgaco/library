@@ -1,6 +1,8 @@
 /* eslint-env browser */
 /* eslint no-unused-vars: [1, {"argsIgnorePattern": "evt"}] */
 
+const $ = window.$;
+
 let myLibrary = [];
 
 const table = document.querySelector('.table');
