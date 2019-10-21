@@ -60,6 +60,12 @@ function closeForm() {
   document.getElementById('myForm').style.display = 'none';
 }
 
+function clearForms()
+{
+    $(':input').not(':button, :submit, :reset, :hidden, :checkbox, :radio').val('');
+    $(':checkbox, :radio').prop('checked', false);
+}
+
 const startApp = (renderArg) => {
   document.querySelector('.submit').addEventListener('click', (evt) => {
     submitForm(evt, renderArg);
@@ -68,6 +74,7 @@ const startApp = (renderArg) => {
     openForm();
   });
   document.querySelector('.close-form').addEventListener('click', (evt) => {
+    clearForms();
     closeForm();
   });
 };
