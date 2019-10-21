@@ -1,7 +1,7 @@
 /* eslint-env browser */
 /* eslint no-unused-vars: [1, {"argsIgnorePattern": "evt"}] */
 
-const {$} = window;
+const { $ } = window;
 
 let myLibrary = [];
 
